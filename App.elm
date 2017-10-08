@@ -44,7 +44,11 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         MouseMsg position ->
-            ( model + 1, Cmd.none )
+            let
+                p =
+                    Debug.log "p" position
+            in
+                ( model + 1, Cmd.none )
 
         KeyboardMsg code ->
             ( model + 2, Cmd.none )
